@@ -11,7 +11,7 @@ for test in range(1,T+1):
 
     price = 0
     for i in range(N):
-        #2 N//2보다 작은 행의 경우 i가 증가할수록 수확범위가 +2
+        #2 N//2보다 작은 행의 경우 i가 증가할수록 수확범위가 -2
         if i < N//2:
             for j in range(N//2-i, N - N//2+i):
                 price += farm[i][j]
