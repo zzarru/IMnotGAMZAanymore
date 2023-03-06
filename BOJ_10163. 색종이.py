@@ -1,24 +1,19 @@
+"""
+문어박사님 풀이1
+"""
+
 N = int(input())
-confetti = [[0] * 101 for _ in range(101)]
+confetti = [[0] * 1001 for _ in range(1001)]
 
-cnt = 1
-for _ in range(N):
-    Si, Sj, w, h = map(int, input().split())
+for n in range(1, N+1):
+    Sj, Si, w, h = map(int, input().split())
 
-    for i in range(h):
-        for j in range(w):
-            Pi = Si + i
-            Pj = Sj + j
+    for i in range(Si, Si+h):
+        for j in range(Sj, Sj+w):
+            confetti[i][j] = n
 
-            confetti[Pi][Pj] = cnt
-
-    cnt += 1
-
-for k in range(1, N+1):
-    paper = 0
-    for i in range(101):
-        for j in range(101):
-            if k == confetti[i][j]:
-                paper += 1
-
-    print(paper)
+for n in range(1, N+1):
+    cnt = 0
+    for paper in confetti:
+        cnt += paper.count(n)
+    print(cnt)

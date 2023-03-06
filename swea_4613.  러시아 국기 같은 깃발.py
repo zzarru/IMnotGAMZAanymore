@@ -1,10 +1,8 @@
 T = int(input())
 for test in range(1, T+1):
     N, M = map(int, input().split())
-    flags = []
-    for _ in range(N):
-        flag = input()
-        flags.append(flag)
+    flags = [list(input()) for _ in range(N)]
+
 
     total = 0
     for i in range(N-2):
